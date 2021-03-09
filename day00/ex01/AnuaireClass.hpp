@@ -2,6 +2,7 @@
 # define ANUAIRECLASS_H
 #include <iostream>
 #include <stdio.h>
+#include <string>
 
 class Anuaire {
 
