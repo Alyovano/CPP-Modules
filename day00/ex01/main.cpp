@@ -1,12 +1,18 @@
 #include "AnnuaireClass.hpp"
 
+void	welcome(void)
+{
+	std::cout << "**************************************" << std::endl;
+	std::cout << "*******Bienvenu dans l'annuaire*******" << std::endl;
+	std::cout << "**************************************" << std::endl;
+}
+
 int		main()
 {
 	std::string user_input;
 	Annuaire contact[8];
-	std::cout << "**************************************" << std::endl;
-	std::cout << "*******Bienvenu dans l'annuaire*******" << std::endl;
-	std::cout << "**************************************" << std::endl;
+
+	welcome();
 	while (1) {
 		std::cout << "Annuaire CMD: ";
 		std::getline(std::cin, user_input);
