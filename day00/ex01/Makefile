@@ -1,8 +1,8 @@
-SRCS = Anuaire.cpp AnuaireClass.cpp
+SRCS = main.cpp AnnuaireClass.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = Anuaire
+NAME = Annuaire
 
 FLAGS = -Wall -Wextra -Werror
 CLANG = clang++ $(FLAGS)

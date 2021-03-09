@@ -1,6 +1,6 @@
-#include "AnuaireClass.hpp"
+#include "AnnuaireClass.hpp"
 
-Anuaire::Anuaire(void) {
+Annuaire::Annuaire(void) {
 
 	std::cout << "Construit" << std::endl;
 	this->test = 5;
@@ -8,7 +8,7 @@ Anuaire::Anuaire(void) {
 	return ;
 }
 
-Anuaire::~Anuaire(void) {
+Annuaire::~Annuaire(void) {
 
 	std::cout << "Detruit" << std::endl;
 	return ;

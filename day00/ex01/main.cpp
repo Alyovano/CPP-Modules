@@ -1,13 +1,14 @@
-#include "AnuaireClass.hpp"
+#include "AnnuaireClass.hpp"
 
 int		main()
 {
 	std::string user_input;
-	Anuaire anuaire[8];
-
-	std::cout << "*******Bienvenu dans l'anuaire*******" << std::endl;
+	Annuaire contact[8];
+	std::cout << "**************************************" << std::endl;
+	std::cout << "*******Bienvenu dans l'annuaire*******" << std::endl;
+	std::cout << "**************************************" << std::endl;
 	while (1) {
-		std::cout << "Anuaire CMD: ";
+		std::cout << "Annuaire CMD: ";
 		std::getline(std::cin, user_input);
 		if (user_input.compare("") == 0)
 			continue ;
@@ -29,10 +30,5 @@ int		main()
 			std::cout << "Mauvaise commande" << std::endl;
 		}
 	}
-
-
-    std::cin >> user_input;
-	std::cout << user_input;
-	// printf("%s\n", user_input);
 	return (0);
 }
