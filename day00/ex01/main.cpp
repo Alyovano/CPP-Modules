@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:39:49 by aly               #+#    #+#             */
-/*   Updated: 2021/03/11 12:30:29 by aly              ###   ########.fr       */
+/*   Updated: 2021/03/11 17:40:14 by alyovano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,41 +21,79 @@ void	welcome(void)
 
 void	add_contact(Annuaire *contact, int i)
 {
-	if (i >= 8)
-	{
-		std::cout << "Annuaire full" << std::endl;
-		return ;
-	}
 	std::cout << "Enter first name: ";
 	std::getline(std::cin, contact[i].first_name);
 	std::cout << "Enter last name: ";
 	std::getline(std::cin, contact[i].last_name);
+	std::cout << "Enter nickname: ";
+	std::getline(std::cin, contact[i].nickname);
+	std::cout << "Enter login: ";
+	std::getline(std::cin, contact[i].login);
+	std::cout << "Enter postal address: ";
+	std::getline(std::cin, contact[i].postal_address);
+	std::cout << "Enter email address: ";
+	std::getline(std::cin, contact[i].email_address);
+	std::cout << "Enter phone number: ";
+	std::getline(std::cin, contact[i].phone_number);
+	std::cout << "Enter birthday: ";
+	std::getline(std::cin, contact[i].birthday);
+	std::cout << "Enter favorite meal: ";
+	std::getline(std::cin, contact[i].fav_meal);
+	std::cout << "Enter underwear color: ";
+	std::getline(std::cin, contact[i].underwear_color);
+	std::cout << "Enter darkest secret: ";
+	std::getline(std::cin, contact[i].darkest_secret);
 }
 
-
-// pt passer par un cat de toute les infos ? 
 void	display_contact(std::string contact_data)
 {
 	size_t i = 0;
 	size_t len = contact_data.length();
-	size_t setw = 10 - len;
+	int setw = 10 - len;
 	std::cout << "|";
-	if (setw)
-	{
+	if (setw > 0) {
 		while (setw) {
 			std::cout << " ";
 			setw--;
 		}
 		std::cout << contact_data;
-		std::cout << "|";
 	}
+	else if (setw < 0)
+	{
+		while (i < 9)
+			std::cout << contact_data[i++];
+		std::cout << ".";
+	}
+	else if (len == 10)
+		std::cout << contact_data;
+	else if (len == 0)
+		std::cout << VOID;
+	std::cout << "|\n";
 }
 
-void	search_contact(Annuaire *contact, int i)
+void	search_contact(Annuaire *contact, int i_used)
 {
-	display_contact(contact[i].first_name);
-	display_contact(contact[i].last_name);
-	return ;
+	std::string user_index;
+
+	std::cout << "PAGE INDEX ?: ";
+	std::getline(std::cin, user_index);
+	int i = std::stoi(user_index);
+	if ((i > -1 && i < 8) && (i < i_used) && (i_used))
+	{
+		display_contact(contact[i].first_name);
+		display_contact(contact[i].last_name);
+		display_contact(contact[i].nickname);
+		display_contact(contact[i].login);
+		display_contact(contact[i].postal_address);
+		display_contact(contact[i].email_address);
+		display_contact(contact[i].phone_number);
+		display_contact(contact[i].birthday);
+		display_contact(contact[i].fav_meal);
+		display_contact(contact[i].underwear_color);
+		display_contact(contact[i].darkest_secret);
+	}
+	else
+		std::cout << "Index invalid" << std::endl;
 }
 
 int		main()
@@ -71,25 +109,18 @@ int		main()
 			continue ;
 		else if (user_input.compare("ADD") == 0)
 		{
-			add_contact(contact, contact->index);
+			if (contact->index <= 7)
+				add_contact(contact, contact->index);
+			else
+				std::cout << "Annuaire full, reboot it." << std::endl;
 			contact->index++;
 		}
 		else if (user_input.compare("SEARCH") == 0)
-		{
-			std::cout << "PAGE INDEX ?: ";
-			std::getline(std::cin, user_input);
-			int user_index = std::stoi(user_input);
-			search_contact(contact, user_index);
-		}
+			search_contact(contact, contact->index);	
 		else if (user_input.compare("EXIT") == 0)
-		{
-			std::cout << "Aurevoir" << std::endl;
-			return 0;
-		}
+			break ;
 		else
-		{
 			std::cout << "Mauvaise commande" << std::endl;
-		}
 	}
 	return (0);
 }
