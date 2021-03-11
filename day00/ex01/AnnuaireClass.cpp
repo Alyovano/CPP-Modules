@@ -1,15 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AnnuaireClass.cpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/09 22:39:58 by aly               #+#    #+#             */
+/*   Updated: 2021/03/11 11:49:37 by aly              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AnnuaireClass.hpp"
 
 Annuaire::Annuaire(void) {
-
-	std::cout << "Construit" << std::endl;
-	this->test = 5;
-	std::cout << this->test << std::endl;
-	return ;
+	this->index = 0;
 }
 
-Annuaire::~Annuaire(void) {
-
-	std::cout << "Detruit" << std::endl;
-	return ;
-}
+Annuaire::~Annuaire(void) {}
