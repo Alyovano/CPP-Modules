@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:39:49 by aly               #+#    #+#             */
-/*   Updated: 2021/03/11 12:28:14 by aly              ###   ########.fr       */
+/*   Updated: 2021/03/11 12:30:29 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	add_contact(Annuaire *contact, int i)
 	std::getline(std::cin, contact[i].last_name);
 }
 
+
+// pt passer par un cat de toute les infos ? 
 void	display_contact(std::string contact_data)
 {
 	size_t i = 0;
@@ -45,7 +47,7 @@ void	display_contact(std::string contact_data)
 			setw--;
 		}
 		std::cout << contact_data;
-		std::cout << "|\n";
+		std::cout << "|";
 	}
 }
 
