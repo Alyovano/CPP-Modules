@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:39:49 by aly               #+#    #+#             */
-/*   Updated: 2021/03/11 17:40:14 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/03/17 15:53:56 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,16 @@ void	search_contact(Annuaire *contact, int i_used)
 
 	std::cout << "PAGE INDEX ?: ";
 	std::getline(std::cin, user_index);
-	int i = std::stoi(user_index);
+	int i = 0;
+	try
+	{
+		std::stoi(user_index);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << "Index invalid" << std::endl;
+		return ;
+	}
 	if ((i > -1 && i < 8) && (i < i_used) && (i_used))
 	{
 		display_contact(contact[i].first_name);

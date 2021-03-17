@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AnnuaireClass.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:39:54 by aly               #+#    #+#             */
-/*   Updated: 2021/03/11 17:07:30 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/03/17 15:37:33 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
+#include <stdlib.h> 
 
 #define VOID "          "
 
