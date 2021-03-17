@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 12:04:11 by alyovano          #+#    #+#             */
-/*   Updated: 2021/03/12 13:42:06 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/03/17 20:02:09 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,21 @@
 #include <iostream>
 #include <ctime>
 #include <unistd.h>
-
-#include "ZombieEvent.hpp"
+//#include "Zombie.hpp"
+//#include "ZombieEvent.hpp"
 
 class Zombie
 {
 
 private:
 	std::string _name;
-	std::string _type;	
+	std::string _type;
 public:
+	void	setName(std::string name);
+	void	setType(std::string type);
 	void	advert();
-	Zombie(std::string name, std::string type);
+	void	announce();
+	Zombie();
 	~Zombie();
 };
 
