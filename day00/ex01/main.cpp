@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:39:49 by aly               #+#    #+#             */
-/*   Updated: 2021/03/17 15:53:56 by aly              ###   ########.fr       */
+/*   Updated: 2021/03/17 16:05:15 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	search_contact(Annuaire *contact, int i_used)
 	int i = 0;
 	try
 	{
-		std::stoi(user_index);
+		i = std::stoi(user_index);
 	}
 	catch(const std::exception& e)
 	{
