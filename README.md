@@ -1,14 +1,15 @@
 # CPP-Modules
 
-Documentation :
+##Documentation :
 
-~If you are a student at 42, I advise you to watch the educational videos (pedago) on the intranet.~
+If you are a student at 42, I advise you to watch the educational videos (pedago) on the intranet.
 
-#	Else : (french doc)
+###	Else : (french doc)
 
-Les classes :
+#### Les classes :
 https://fr.wikibooks.org/wiki/Programmation_C%2B%2B/Les_classes
-Les references :
+
+#### Les references :
 https://fr.wikibooks.org/wiki/Programmation_C%2B%2B/Les_r%C3%A9f%C3%A9rences
 
 
