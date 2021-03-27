@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:39:49 by aly               #+#    #+#             */
-/*   Updated: 2021/03/24 23:47:52 by aly              ###   ########.fr       */
+/*   Updated: 2021/03/27 22:40:58 by alyovano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ void	search_contact(Annuaire *contact, int i_used)
 {
 	std::string user_index;
 
+	for (int j = 0; j < i_used ; j++)
+	{
+		contact[j].mini_print(j);
+		if (j == 7)
+			break ;
+	}
 	std::cout << "PAGE INDEX ?: ";
 	std::getline(std::cin, user_index);
 	int i = 0;
