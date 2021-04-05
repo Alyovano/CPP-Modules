@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 15:53:56 by aly               #+#    #+#             */
-/*   Updated: 2021/04/05 14:23:06 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/05 21:04:04 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,18 @@ private:
 	void		_init_var();
 	int _value;
 public:
-	Fixed	&operator=(Fixed const & ret_fix);
-	int		getRawBits(void) const;
+	Fixed		&operator=(Fixed const & ret_fix);
+	int			getRawBits(void) const;
 	void		setRawBits(int const raw);
+	int			toInt(void) const;
+	float		toFloat(void) const;
 	Fixed(const Fixed & var);
 	Fixed(const float var);
 	Fixed(const int var);
-	Fixed(/* args */);
+	Fixed();
 	~Fixed();
 };
 
+std::ostream	&operator<<(std::ostream & stream, Fixed const & fix);
 
 #endif
