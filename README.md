@@ -17,10 +17,14 @@ https://codes-sources.commentcamarche.net/source/10304-difference-entre-pointeur
 http://www.cplusplus.com/reference/string/string/  (en)
 
 
-#### File gestion
+#### File gestion : 
 https://webdevdesigner.com/q/read-file-contents-into-a-string-in-c-duplicate-60589/ (en)
+
+
+#### Les operateurs : 
+https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c/1897891-surchargez-un-operateur (fr)
+
 
 
 For all of your cpp projects I advise you to compile with:
 $ clang++ -Wall -Wextra -Werror -std=c++98 #your_files.cpp
-
