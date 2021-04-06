@@ -24,3 +24,6 @@ https://webdevdesigner.com/q/read-file-contents-into-a-string-in-c-duplicate-605
 For all of your cpp projects I advise you to compile with:
 $ clang++ -Wall -Wextra -Werror -std=c++98 #your_files.cpp
 
+#### Operateurs
+
+https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c/1897891-surchargez-un-operateur (fr)
