@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 13:27:58 by alyovano          #+#    #+#             */
-/*   Updated: 2021/03/17 19:58:36 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/08 17:40:26 by alyovano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
+#include <cstdlib>
 
 std::string 	gen_random(const int len) {
     
