@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 13:16:54 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/11 00:13:09 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/11 01:48:37 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,20 @@ FragTrap::FragTrap(std::string input_name)
 	this->_name = input_name;
 }
 
+FragTrap::FragTrap() {
+	std::cout << "Default constructor called : FragTrap" << std::endl;
+}
+
 FragTrap::~FragTrap()
 {
-	this->_hit_points = 100;
 	this->_max_energy_points = 100;
 	this->_energy_points = 100;
 	this->_max_hit_points = 100;
+	this->_hit_points = 100;
 	this->_level = 1;
 	this->_melee_attack_dmg = 30;
 	this->_ranged_attack_dmg = 20;
 	this->_armor_dmg_reduc = 5;
 	std::cout << "Destructor : ";
-	std::cout << "Je sens plus mes doigts... AAAHHHH mais j'ai ai pas en fait !" << std::endl;
+	std::cout << "Je sens plus mes doigts... AAAHHHH mais j'en ai pas en fait !" << std::endl;
 }
