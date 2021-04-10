@@ -8,6 +8,7 @@ If you are a student at 42, I advise you to watch the educational videos (pedago
 
 #### Les classes :
 https://fr.wikibooks.org/wiki/Programmation_C%2B%2B/Les_classes  (fr)
+https://cpp.developpez.com/cours/cppavance/ (fr) (Coplien)
 
 #### Les references :
 https://fr.wikibooks.org/wiki/Programmation_C%2B%2B/Les_r%C3%A9f%C3%A9rences  (fr)
