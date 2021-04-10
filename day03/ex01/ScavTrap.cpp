@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:48:24 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/10 14:09:29 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/10 14:12:28 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void	ScavTrap::beRepaired(unsigned int amount) {
 ScavTrap::ScavTrap(std::string input_name) :	_hit_points(100),
 										 		_max_hit_points(100),
 												_energy_points(50),
-												_max_energy_points(100),
+												_max_energy_points(50),
 												_level(1),
 												_melee_attack_dmg(20),
 												_ranged_attack_dmg(15),
