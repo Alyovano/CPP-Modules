@@ -6,18 +6,33 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:22:16 by aly               #+#    #+#             */
-/*   Updated: 2021/04/10 14:24:40 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/10 19:37:02 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
-
+#define UINT unsigned int
+#include <string>
+#include <iostream>
 class ClapTrap
 {
-private:
-	/* data */
+protected:
+		UINT 				 _hit_points;
+		UINT				 _max_hit_points;
+		UINT				 _energy_points;
+		UINT				 _max_energy_points;
+		UINT				 _level;
+		int					 _melee_attack_dmg;
+		int					 _ranged_attack_dmg;
+		UINT				 _armor_dmg_reduc;
+		std::string 		 _name;
 public:
+	void			rangedAttack(std::string const & target);
+	void			meleeAttack(std::string const & target);
+	void			takeDamage(unsigned int amount);
+	void			beRepaired(unsigned int amount);
+	void			getEnergy(unsigned int amount);
 	ClapTrap(/* args */);
 	~ClapTrap();
 };

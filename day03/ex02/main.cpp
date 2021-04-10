@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 13:16:57 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/10 14:24:13 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/10 14:27:11 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,7 @@ int		main() {
 	std::cout << "TEST CLAPTRAP" << std::endl;
 	std::cout << std::endl;
 
+
+	std::cout << "test" << std::endl;
 	return 0;
 }

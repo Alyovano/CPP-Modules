@@ -22,7 +22,7 @@ void	ScavTrap::challengeNewcomer(void) {
 		return ;
 	}
 	srand (time(NULL));
-	std::cout << this->_name << _challeng[rand() % 5]
+	std::cout << this->_name << _challeng[rand() % 3]
 		<< std::endl;
 }
 
