@@ -6,18 +6,38 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:22:14 by aly               #+#    #+#             */
-/*   Updated: 2021/04/10 14:30:39 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/11 00:30:22 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+void		ClapTrap::init_ClapTrap(void) {
+	this->_max_energy_points = 50;
+	this->_energy_points = 50;
+	this->_max_hit_points = 100;
+	this->_level = 1;
+	this->_melee_attack_dmg = 20;
+	this->_ranged_attack_dmg = 15;
+	this->_armor_dmg_reduc = 3;
+}
+
 ClapTrap::ClapTrap(/* args */)
 {
+	init_ClapTrap();
+	std::cout << "Constructeur CLAPTRAP : HERITAGE" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name)
+{
+	init_ClapTrap();
+	std::cout << "Constructeur CLAPTRAP : STANDART" << std::endl;
+	this->_name = name;
 }
 
 ClapTrap::~ClapTrap()
 {
+	std::cout << "Destructeur CLAPTRAP : HERITAGE" << std::endl;
 }
 
 void	ClapTrap::getEnergy(unsigned int amount) {

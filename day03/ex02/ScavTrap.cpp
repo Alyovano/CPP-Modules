@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:48:24 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/10 19:41:47 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/11 00:14:35 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ void	ScavTrap::challengeNewcomer(void) {
 
 // Constructeur
 ScavTrap::ScavTrap(std::string input_name) {
+	this->_max_energy_points = 50;
+	this->_energy_points = 50;
+	this->_max_hit_points = 100;
+	this->_level = 1;
+	this->_melee_attack_dmg = 20;
+	this->_ranged_attack_dmg = 15;
+	this->_armor_dmg_reduc = 3;
 	std::cout << "ScavTrap en cours de robotisation." << std::endl;
 	this->_name = input_name;
 }
