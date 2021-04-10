@@ -3,28 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:48:24 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/08 16:54:03 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/04/10 14:09:29 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include <cstdlib>
 
-std::string		ScavTrap::_attack[] = {"Coup de tete ", "Lancer de chaussures", 
-	"Coup de pied retourne ", "Empoisonnement ", "Coup de fil a un ami "};
+std::string		ScavTrap::_challeng[] = {" bloque la porte avec son boule .", " panique et se met a hurler .", 
+	" se jete par dessus bord ."};
 
-void	ScavTrap::vaulthunter_dot_exe(std::string const & target) {
+void	ScavTrap::challengeNewcomer(void) {
+	if (this->_energy_points < 1) {
+		std::cout << "Vous n'avez pas assez d'energie" << std::endl;
+		return ;
+	}
 	srand (time(NULL));
-	std::cout << this->_name << " - Attaque : " << _attack[rand() % 5]
-		<< rand() % 101 << " dommage provoques a " << target << std::endl; 
-	return ;
+	std::cout << this->_name << _challeng[rand() % 5]
+		<< std::endl;
+}
+
+void	ScavTrap::getEnergy(unsigned int amount) {
+	if (amount >= this->_max_energy_points) {
+		this->_energy_points = this->_max_energy_points;
+		std::cout << this->_name << " energie restante :" << _energy_points << std::endl;
+		return ;
+	}
+	else {
+		this->_energy_points += amount;
+		if (this->_energy_points > this->_max_energy_points) {
+			this->_energy_points = this->_max_energy_points;
+		}
+		std::cout << this->_name << " energie restante :" << _energy_points << std::endl;
+		return ;
+	}
 }
 
 void	ScavTrap::rangedAttack(std::string const & target) {
-	std::cout << "FR4G-TP " << "<" << this->_name << ">";
+	std::cout << "ScavTrap " << "<" << this->_name
+			<< "(niv." << this->_level << ")" << ">";
 	std::cout << " attaque " << "<" << target << ">";
 	std::cout << " à distance, causant " << "<" <<
 						this->_ranged_attack_dmg << ">";
@@ -32,7 +52,8 @@ void	ScavTrap::rangedAttack(std::string const & target) {
 }
 
 void	ScavTrap::meleeAttack(std::string const & target) {
-	std::cout << "FR4G-TP " << "<" << this->_name << ">";
+	std::cout << "ScavTrap " << "<" << this->_name
+			<< "(niv." << this->_level << ")" << ">";
 	std::cout << " attaque " << "<" << target << ">";
 	std::cout << " au corps a corps, causant " << "<" <<
 						this->_melee_attack_dmg << ">";
@@ -47,23 +68,23 @@ void	ScavTrap::takeDamage(unsigned int amount) {
 		return ;
 	}
 	if (this->_hit_points == 0) {
-		std::cout << this->_name << " est deja mort" << std::endl;
+		std::cout << this->_name << " est deja cuit" << std::endl;
 		return ;
 	}
 	if (amount >= this->_hit_points) {
-		std::cout << this->_name << " est mort " << std::endl;
+		std::cout << this->_name << " est cuit " << std::endl;
 		this->_hit_points = 0;
 	}
 	if (amount < this->_hit_points) {
 		this->_hit_points = this->_hit_points - amount;
-		std::cout << this->_name << " recoit une attaque : ";
+		std::cout << this->_name << " se fait rentrer dedans : ";
 		std::cout << "-" << amount << " HP" << std::endl;
 	}
 	if (this->_hit_points - amount <= 0) {
 		this->_hit_points = this->_hit_points - amount;
-		std::cout << this->_name << " recoit une attaque : ";
+		std::cout << this->_name << " se fait rentrer dedans  : ";
 		std::cout << "-" << amount << " HP" << std::endl;
-		std::cout << this->_name << " est mort" << std::endl;
+		std::cout << this->_name << " est cuit" << std::endl;
 		this->_hit_points = 0;
 	}
 }
@@ -98,12 +119,12 @@ ScavTrap::ScavTrap(std::string input_name) :	_hit_points(100),
 												_ranged_attack_dmg(15),
 												_armor_dmg_reduc(3)
 {
-	std::cout << "FragTrap constructor called" << std::endl;
+	std::cout << "ScavTrap en cours de robotisation." << std::endl;
 	this->_name = input_name;
 }
 
 ScavTrap::~ScavTrap()
 {
 	std::cout << "Destructor : ";
-	std::cout << "Je sens plus mes doigts... AAAHHHH mais j'ai ai pas en fait !" << std::endl;
+	std::cout << "Mon cul a sauve tout vos culs !" << std::endl;
 }

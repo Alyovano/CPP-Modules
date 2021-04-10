@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 13:16:57 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/08 16:56:40 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/04/10 14:09:54 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ int		main() {
 		robot.beRepaired(100);
 		robot.vaulthunter_dot_exe("Bernard");
 	}
+
+	//ex01
+	std::cout << std::endl;
+	std::cout << "TEST SCAVTRAP" << std::endl;
+	std::cout << std::endl;
+
 	{
 		ScavTrap portier = ScavTrap("Jeffrey");
 		portier.rangedAttack("Test");
@@ -42,6 +48,7 @@ int		main() {
 		portier.beRepaired(10);
 		portier.takeDamage(9);
 		portier.beRepaired(100);
+		portier.challengeNewcomer();
 	}
 
 	return 0;

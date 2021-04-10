@@ -6,7 +6,7 @@
 /*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 13:17:00 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/07 17:58:31 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/04/08 17:30:02 by alyovano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class FragTrap
 		void			meleeAttack(std::string const & target);
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
+		void			getEnergy(unsigned int amount);
 		FragTrap(std::string input_name);
 		~FragTrap();
 };

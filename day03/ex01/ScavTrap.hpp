@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:47:33 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/08 16:53:25 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/04/10 14:06:47 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ class ScavTrap
 		int					 _ranged_attack_dmg;
 		UINT				 _armor_dmg_reduc;
 		std::string 		 _name;
-		static std::string	 _attack[5];
+		static std::string	 _challeng[3];
 	public:
-		void			vaulthunter_dot_exe(std::string const & target);
+		void			getEnergy(unsigned int amount);
+		void			challengeNewcomer(void);
 		void			rangedAttack(std::string const & target);
 		void			meleeAttack(std::string const & target);
 		void			takeDamage(unsigned int amount);
