@@ -28,5 +28,8 @@ https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c/18978
 #### Les heritages :
 https://loic-joly.developpez.com/articles/heritage-multiple/ (fr)
 
+#### Le polymorphisme :
+https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c/1898632-mettez-en-oeuvre-le-polymorphisme (fr)
+
 For all of your cpp projects I advise you to compile with:
 $ clang++ -Wall -Wextra -Werror -std=c++98 #your_files.cpp
