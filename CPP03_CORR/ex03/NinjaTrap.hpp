@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/14 13:53:25 by aly               #+#    #+#             */
-/*   Updated: 2021/04/14 14:15:27 by aly              ###   ########.fr       */
+/*   Created: 2021/04/11 00:35:49 by aly               #+#    #+#             */
+/*   Updated: 2021/04/11 00:50:55 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-#define PEON_HPP
+#ifndef NINJATRAP_HPP
+#define NINJATRAP_HPP
 
-#include "Victim.hpp"
-#include "Sorcerer.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-#include <string>
-
-class Peon : public Victim
+class NinjaTrap : public ClapTrap
 {
 private:
 	/* data */
 public:
-	Peon(std::string name);
-	Peon(/* args */);
-	~Peon();
+		void		ninjaShoebox(NinjaTrap & ptr);
+		void		ninjaShoebox(ClapTrap & ptr);
+		void		ninjaShoebox(ScavTrap & ptr);
+		void		ninjaShoebox(FragTrap & ptr);
+	NinjaTrap(std::string name);
+	~NinjaTrap();
 };
-
 
 #endif

@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/14 13:53:25 by aly               #+#    #+#             */
-/*   Updated: 2021/04/14 14:15:27 by aly              ###   ########.fr       */
+/*   Created: 2021/04/08 16:47:33 by alyovano          #+#    #+#             */
+/*   Updated: 2021/04/10 16:43:24 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-#define PEON_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-#include "Victim.hpp"
-#include "Sorcerer.hpp"
-
+#include <iostream>
 #include <string>
+#include "ClapTrap.hpp"
+#define UINT unsigned int
 
-class Peon : public Victim
+class ScavTrap : public ClapTrap
 {
-private:
-	/* data */
-public:
-	Peon(std::string name);
-	Peon(/* args */);
-	~Peon();
+	private:
+		static std::string	 _challeng[3];
+	public:
+		void			challengeNewcomer(void);
+		ScavTrap(std::string input_name);
+		~ScavTrap();
 };
 
 

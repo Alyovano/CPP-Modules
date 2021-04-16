@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   SuperTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/14 13:53:25 by aly               #+#    #+#             */
-/*   Updated: 2021/04/14 14:15:27 by aly              ###   ########.fr       */
+/*   Created: 2021/04/11 01:10:37 by aly               #+#    #+#             */
+/*   Updated: 2021/04/11 01:45:34 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-#define PEON_HPP
+#include "SuperTrap.hpp"
 
-#include "Victim.hpp"
-#include "Sorcerer.hpp"
+SuperTrap::SuperTrap(std::string name) : FragTrap(name), NinjaTrap(name) {
+	this->_name = name;
+	this->_max_energy_points = 120;
+	this->_energy_points = 120;
+	this->_max_hit_points = 100;
+	this->_hit_points = 100;
+	this->_level = 1;
+	this->_melee_attack_dmg = 60;
+	this->_ranged_attack_dmg = 20;
+	this->_armor_dmg_reduc = 5;
+}
 
-#include <string>
+SuperTrap::SuperTrap() {
+}
 
-class Peon : public Victim
+SuperTrap::~SuperTrap()
 {
-private:
-	/* data */
-public:
-	Peon(std::string name);
-	Peon(/* args */);
-	~Peon();
-};
-
-
-#endif
+}

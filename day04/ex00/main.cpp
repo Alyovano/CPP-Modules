@@ -6,12 +6,13 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:02:07 by aly               #+#    #+#             */
-/*   Updated: 2021/04/12 15:08:50 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/14 14:17:23 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
+#include "Peon.hpp"
 
 void	sorcerer_test() {
 	std::cout << "----SORCERER TEST----" << std::endl;
@@ -38,6 +39,7 @@ void	victim_test() {
 }
 
 void	peon_test() {
+	Peon test = Peon("Peon");
 }
 
 int		main() {
