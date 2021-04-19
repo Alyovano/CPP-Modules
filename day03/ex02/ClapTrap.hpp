@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:22:16 by aly               #+#    #+#             */
-/*   Updated: 2021/04/11 00:28:28 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/16 16:28:54 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ public:
 	void			takeDamage(unsigned int amount);
 	void			beRepaired(unsigned int amount);
 	void			getEnergy(unsigned int amount);
+	ClapTrap(const ClapTrap & x);
+	ClapTrap&			operator=(const ClapTrap & x);
 	ClapTrap(std::string name);
 	ClapTrap();
 	~ClapTrap();

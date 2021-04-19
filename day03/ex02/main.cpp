@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 13:16:57 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/11 00:23:17 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/16 16:30:30 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		main() {
 		robot.takeDamage(9);
 		robot.beRepaired(100);
 		robot.vaulthunter_dot_exe("Bernard");
+		FragTrap robot2(robot);
 	}
 
 	//ex01

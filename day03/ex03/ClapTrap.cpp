@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:22:14 by aly               #+#    #+#             */
-/*   Updated: 2021/04/11 00:49:53 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/16 16:33:05 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,4 +127,24 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 			" de soin, il a maintenant " << this->_hit_points 
 					<< " pv" << std::endl;
 	}
+}
+
+ClapTrap::ClapTrap(const ClapTrap & x) {
+	*this = x;
+	std::cout << "COPY : ClapTrap constructor called" << std::endl;
+}
+
+ClapTrap&		ClapTrap::operator=(const ClapTrap & x) {
+	if (this != &x)
+	{
+		this->_name = x._hit_points;
+		this->_name = x._max_energy_points;
+		this->_name = x._energy_points;
+		this->_name = x._max_hit_points;
+		this->_name = x._level;
+		this->_name = x._melee_attack_dmg;
+		this->_name = x._ranged_attack_dmg;
+		this->_name = x._armor_dmg_reduc;
+	}
+	return (*this);
 }

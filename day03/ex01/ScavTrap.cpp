@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:48:24 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/10 14:12:28 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/16 16:26:13 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,4 +127,24 @@ ScavTrap::~ScavTrap()
 {
 	std::cout << "Destructor : ";
 	std::cout << "Mon cul a sauve tout vos culs !" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap & x) {
+	*this = x;
+	std::cout << "COPY : ScavTrap constructor called" << std::endl;
+}
+
+ScavTrap&		ScavTrap::operator=(const ScavTrap & x) {
+	if (this != &x)
+	{
+		this->_name = x._hit_points;
+		this->_name = x._max_energy_points;
+		this->_name = x._energy_points;
+		this->_name = x._max_hit_points;
+		this->_name = x._level;
+		this->_name = x._melee_attack_dmg;
+		this->_name = x._ranged_attack_dmg;
+		this->_name = x._armor_dmg_reduc;
+	}
+	return (*this);
 }

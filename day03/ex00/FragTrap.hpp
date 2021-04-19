@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 13:17:00 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/08 17:30:02 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/04/16 14:48:41 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ class FragTrap
 		void			beRepaired(unsigned int amount);
 		void			getEnergy(unsigned int amount);
 		FragTrap(std::string input_name);
+		FragTrap(const FragTrap & x);
+		FragTrap&			operator=(const FragTrap & x);
 		~FragTrap();
 };
 

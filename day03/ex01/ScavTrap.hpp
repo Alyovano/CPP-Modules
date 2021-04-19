@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:47:33 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/10 14:06:47 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/16 14:54:54 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ class ScavTrap
 		void			meleeAttack(std::string const & target);
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
+		ScavTrap(const ScavTrap & x);
+		ScavTrap&			operator=(const ScavTrap & x);
 		ScavTrap(std::string input_name);
 		~ScavTrap();
 };

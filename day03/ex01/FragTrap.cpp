@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 13:16:54 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/08 17:38:51 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/04/16 16:29:04 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,4 +126,25 @@ FragTrap::~FragTrap()
 {
 	std::cout << "Destructor : ";
 	std::cout << "Je sens plus mes doigts... AAAHHHH mais j'ai ai pas en fait !" << std::endl;
+}
+
+
+FragTrap::FragTrap(const FragTrap & x) {
+	*this = x;
+	std::cout << "COPY : FragTrap constructor called" << std::endl;
+}
+
+FragTrap&		FragTrap::operator=(const FragTrap & x) {
+	if (this != &x)
+	{
+		this->_name = x._hit_points;
+		this->_name = x._max_energy_points;
+		this->_name = x._energy_points;
+		this->_name = x._max_hit_points;
+		this->_name = x._level;
+		this->_name = x._melee_attack_dmg;
+		this->_name = x._ranged_attack_dmg;
+		this->_name = x._armor_dmg_reduc;
+	}
+	return (*this);
 }

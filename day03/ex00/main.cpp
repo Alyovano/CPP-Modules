@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 13:16:57 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/08 17:34:54 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/04/16 16:25:25 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ int		main() {
 	robot.beRepaired(100);
 	robot.vaulthunter_dot_exe("Bernard");
 
-	// Non mandatate
+	FragTrap robot2(robot);
+	robot2.beRepaired(5);
+	//Not mandatate
 	robot.getEnergy(0);
 	robot.getEnergy(10);
 	robot.getEnergy(45);
