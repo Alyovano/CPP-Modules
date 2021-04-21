@@ -10,8 +10,7 @@ If you are a student at 42, I advise you to watch the educational videos (pedago
 
 #### Les references :<br/>https://fr.wikibooks.org/wiki/Programmation_C%2B%2B/Les_r%C3%A9f%C3%A9rences  (fr) <br/>https://codes-sources.commentcamarche.net/source/10304-difference-entre-pointeur-et-reference-par-un-exemple (fr) <br/>
 
-#### Les strings : <br/>http://www.cplusplus.com/reference/string/string/  (en) <br/>
-https://en.cppreference.com/w/cpp/string/basic_string <br/>
+#### Les strings : <br/>http://www.cplusplus.com/reference/string/string/  (en) <br/>https://en.cppreference.com/w/cpp/string/basic_string <br/>
 
 
 #### File gestion : <br/>https://webdevdesigner.com/q/read-file-contents-into-a-string-in-c-duplicate-60589/ (en) <br/>
