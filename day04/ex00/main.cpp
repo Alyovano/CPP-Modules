@@ -6,13 +6,23 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:02:07 by aly               #+#    #+#             */
-/*   Updated: 2021/04/24 01:25:26 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/24 01:29:25 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
 #include "Peon.hpp"
+
+// int main()
+// {
+// 	Sorcerer robert("Robert", "the Magnificent");
+// 	Victim jim("Jimmy");
+// 	Peon joe("Joe");
+// 	std::cout << robert << jim << joe;
+// 	robert.polymorph(jim);
+// 	robert.polymorph(joe);
+// }
 
 int		main() {
 	//Classes test
