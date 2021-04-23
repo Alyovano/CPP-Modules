@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 12:59:36 by aly               #+#    #+#             */
-/*   Updated: 2021/04/12 15:07:57 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/24 00:45:43 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include "Victim.hpp"
 
 class Sorcerer
 {
@@ -25,6 +26,7 @@ public:
 	std::string			get_name(void) const;
 	std::string			get_title(void) const;
 	Sorcerer&			operator=(const Sorcerer & x);
+	void 				polymorph(Victim const &a);
 	Sorcerer(std::string name, std::string title);
 	Sorcerer(const Sorcerer & x);
 	~Sorcerer();

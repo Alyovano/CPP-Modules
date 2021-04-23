@@ -5,28 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/14 13:53:25 by aly               #+#    #+#             */
-/*   Updated: 2021/04/14 14:15:27 by aly              ###   ########.fr       */
+/*   Created: 2021/04/24 01:26:16 by aly               #+#    #+#             */
+/*   Updated: 2021/04/24 01:26:17 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PEON_HPP
 #define PEON_HPP
 
-#include "Victim.hpp"
-#include "Sorcerer.hpp"
-
 #include <string>
+#include <iostream>
+#include <unistd.h>
 
-class Peon : public Victim
+#include "Victim.hpp"
+
+class Peon : virtual public Victim
 {
-private:
-	/* data */
-public:
-	Peon(std::string name);
-	Peon(/* args */);
-	~Peon();
-};
 
+private:
+public:
+
+	Peon(const Peon & x);
+	Peon&	operator=(const Peon & x);
+	Peon();
+	Peon(std::string name);
+	virtual void getPolymorphed() const;
+	virtual ~Peon();
+};
 
 #endif

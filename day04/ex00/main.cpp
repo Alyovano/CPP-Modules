@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:02:07 by aly               #+#    #+#             */
-/*   Updated: 2021/04/14 14:17:23 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/24 01:25:26 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include "Victim.hpp"
 #include "Peon.hpp"
 
-void	sorcerer_test() {
+int		main() {
+	//Classes test
 	std::cout << "----SORCERER TEST----" << std::endl;
 	Sorcerer robert = Sorcerer("Robert", "Le Spectaculaire");
 	Sorcerer gandalf = Sorcerer("Gandalf", "La Mayar");
@@ -29,27 +30,22 @@ void	sorcerer_test() {
 	Sorcerer mathis = Sorcerer("Mathis", "Le Magnifique");
 	Sorcerer test = Sorcerer(mathis);
 	std::cout << test;
-}
 
-void	victim_test() {
+	
 	std::cout << "----VICTIM TEST----" << std::endl;
 	Victim pouet = Victim("Pouet");
 	std::cout << pouet;
-	
-}
 
-void	peon_test() {
-	Peon test = Peon("Peon");
-}
-
-int		main() {
-	//Classes test
-	sorcerer_test();
-	victim_test();
-	peon_test();
-	std::cout << std::endl << std::endl;
-	std::cout << "Story telling" << std::endl;
+	//Polymorph test
+	std::cout << "----POLYMOTPH VICTIM----" << std::endl;
+	gandalf.polymorph(pouet);
 
 
+	std::cout << "----PEON TEST----" << std::endl;
+	Peon petit_peon("PEON");
+	std::cout << petit_peon;
 
+	std::cout << "----POLYMOTPH PEON----" << std::endl;
+	gandalf.polymorph(petit_peon);
+	std::cout << "----DESTRUCTION----" << std::endl;
 }

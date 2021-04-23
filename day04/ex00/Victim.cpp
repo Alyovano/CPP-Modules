@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 14:39:25 by aly               #+#    #+#             */
-/*   Updated: 2021/04/12 14:56:13 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/24 01:15:02 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@ Victim::~Victim() {
 std::ostream &		operator<<(std::ostream & output, const Victim & x)
 {
 	output << "I am " << x.get_name() << ", " 
-			<< ", and I like otters!" << std::endl;
+			<< "and I like otters!" << std::endl;
 	return (output);
+}
+
+void			Victim::getPolymorphed() const
+{
+	std::cout << this->_name 
+		<< " was just polymorphed in a cute little sheep!" << std::endl;
+}
+
+Victim::Victim() {
 }

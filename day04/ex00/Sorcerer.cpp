@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:00:52 by aly               #+#    #+#             */
-/*   Updated: 2021/04/12 15:08:41 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/24 00:46:02 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,8 @@ Sorcerer::Sorcerer(std::string name, std::string title) {
 Sorcerer::~Sorcerer() {
 	std::cout << this->_name << ", " << this->_title 
 	<< ", is dead." << " Consequences will never be the same !" << std::endl;
+}
+
+void 		Sorcerer::polymorph(Victim const &a) {
+	a.getPolymorphed();
 }
