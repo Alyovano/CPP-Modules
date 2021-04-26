@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AWeapon.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 18:34:54 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/25 19:07:40 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/04/26 17:20:40 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,10 @@ AWeapon&		AWeapon::operator=(const AWeapon & x) {
 		this->_name = x.getName();
 	}
     return *this;
+}
+
+std::ostream &operator<<(std::ostream & out, AWeapon const & x)
+{
+	out << x.getName();
+	return (out);
 }

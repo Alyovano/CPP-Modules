@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AWeapon.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 18:34:57 by alyovano          #+#    #+#             */
-/*   Updated: 2021/04/25 19:09:16 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/04/26 17:25:58 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <unistd.h>
+#include <stdio.h>
 
 class AWeapon
 {
@@ -37,5 +38,7 @@ public:
 	AWeapon(std::string const & name, int apcost, int damage);
 	~AWeapon();
 };
+
+std::ostream &operator<<(std::ostream &flux, AWeapon const& other);
 
 #endif
