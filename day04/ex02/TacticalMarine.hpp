@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 00:29:25 by aly               #+#    #+#             */
-/*   Updated: 2021/04/27 00:29:41 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/27 01:10:05 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,18 @@
 
 #include "IspaceMarine.hpp"
 
-class TacticalMarine
+class TacticalMarine : public ISpaceMarine
 {
 
 private:
 
 public:
 
+	virtual ISpaceMarine* clone() const;
+	virtual void battleCry() const;
+	virtual void rangedAttack() const;
+	virtual void meleeAttack() const;
+	
 	TacticalMarine(const TacticalMarine & x);
 	TacticalMarine&	operator=(const TacticalMarine & x);
 	TacticalMarine();
