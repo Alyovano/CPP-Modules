@@ -1,9 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Squad.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/04/27 00:00:31 by aly               #+#    #+#             */
+/*   Updated: 2021/04/27 00:12:32 by aly              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Squad.hpp"
 
-Squad::Squad() {
+int		Squad::getCount() const {
+	return _count;
 }
 
-Squad::~Squad() {
+ISpaceMarine* 	Squad::getUnit(int i) const {
+	(void)i;
+	return 0;
+}
+
+int Squad::push(ISpaceMarine * x) {
+	(void)x;
+	return 0;
 }
 
 Squad::Squad(const Squad & x) {
@@ -11,11 +31,14 @@ Squad::Squad(const Squad & x) {
 }
 
 Squad&		Squad::operator=(const Squad & x) {
-	// if (this != &x) {
-	// 	this->a = x.a;
-	// 	this->b = x.b;
-	// 	     ...
-	// }
-	(void)x; // -Werror -Wextra -Wall
+	if (this != &x) {
+		this->_count = x._count;
+	}
     return *this;
+}
+
+Squad::Squad() {
+}
+
+Squad::~Squad() {
 }
