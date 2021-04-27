@@ -5,17 +5,23 @@
 #include <iostream>
 #include <unistd.h>
 
-class AssaultTerminator
+#include "Squad.hpp"
+
+class AssaultTerminator : public ISpaceMarine
 {
 
 private:
 
 public:
 
+	virtual ISpaceMarine* clone() const;
+	virtual void battleCry() const;
+	virtual void rangedAttack() const;
+	virtual void meleeAttack() const;
 	AssaultTerminator(const AssaultTerminator & x);
 	AssaultTerminator&	operator=(const AssaultTerminator & x);
 	AssaultTerminator();
-	~AssaultTerminator();
+	virtual ~AssaultTerminator();
 };
 
 #endif

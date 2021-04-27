@@ -6,16 +6,34 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 00:29:21 by aly               #+#    #+#             */
-/*   Updated: 2021/04/27 00:29:22 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/27 17:16:39 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "TacticalMarine.hpp"
 
+ISpaceMarine* TacticalMarine::clone() const {
+	ISpaceMarine *ptr = new TacticalMarine;
+	return ptr;
+}
+
+void TacticalMarine::battleCry() const {
+	std::cout << "For the Holy PLOT !" << std::endl;
+}
+void TacticalMarine::rangedAttack() const {
+	std::cout << "* attacks with a bolter *" << std::endl;
+}
+
+void TacticalMarine::meleeAttack() const {
+	std::cout << "* attacks with a chainsword *" << std::endl;
+}
+
 TacticalMarine::TacticalMarine() {
+	std::cout << "Tactical Marine ready for action !" << std::endl;
 }
 
 TacticalMarine::~TacticalMarine() {
+	std::cout << "Aaargh ..." << std::endl; 
 }
 
 TacticalMarine::TacticalMarine(const TacticalMarine & x) {
@@ -23,11 +41,6 @@ TacticalMarine::TacticalMarine(const TacticalMarine & x) {
 }
 
 TacticalMarine&		TacticalMarine::operator=(const TacticalMarine & x) {
-	// if (this != &x) {
-	// 	this->a = x.a;
-	// 	this->b = x.b;
-	// 	     ...
-	// }
 	(void)x; // -Werror -Wextra -Wall
     return *this;
 }

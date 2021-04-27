@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 00:29:25 by aly               #+#    #+#             */
-/*   Updated: 2021/04/27 01:10:05 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/27 15:17:44 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
 	TacticalMarine(const TacticalMarine & x);
 	TacticalMarine&	operator=(const TacticalMarine & x);
 	TacticalMarine();
-	~TacticalMarine();
+	virtual ~TacticalMarine();
 };
 
 #endif
