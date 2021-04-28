@@ -6,12 +6,24 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 00:00:31 by aly               #+#    #+#             */
-/*   Updated: 2021/04/28 16:55:32 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/28 18:00:18 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
 // gestion de la liste chainee
+
+int		Squad::check_presence(ISpaceMarine * x) {
+	lst *tmp;
+
+	tmp = _squad;
+	while (tmp) {
+		if (x == tmp->solider)
+		 	return -1;
+		tmp = tmp->next;
+	}
+	return 0;
+}
 
 lst 	*Squad::Last_solider() {
 	lst *tmp;
@@ -45,11 +57,19 @@ int		Squad::lstsize() {
 int Squad::push(ISpaceMarine * x) {
 	lst *tmp;
 
+	if (!x) {
+		std::cout << "Soldat inexistant" << std::endl;
+		return -1;
+	}
+	if (check_presence(x) == -1) {
+		std::cout << "Soldat deja existant dans le bataaaaaaaaaillon"
+				<< std::endl;
+		return -1;
+	}
 	tmp = _squad;
 	if (_count != 0)
 		_squad = Last_solider();
 	_squad->next = lst_new_solider(x);
-	_squad->next->solider->battleCry();
 	if (_count != 0)
 		_squad = tmp;
 	_count += 1;
@@ -63,13 +83,17 @@ int		Squad::getCount() const {
 ISpaceMarine* 	Squad::getUnit(int i) const {
 	lst *tmp = _squad;
 	int j = 0;
+	if ((i >= _count) || (i < 0)) {
+		std::cout << "Cette unite n'est pas dans bataillon" 
+			<< " : Renvoie du dernier soldat liste" << std::endl;
+		i = (_count - 1);
+	}
 	while (tmp && tmp->next) {
 		if (j == i)
-			return tmp->solider;
+			return tmp->next->solider;
 		tmp = tmp->next;
 		j++;
 	}
-	std::cout << "Soldat " << i << " n'est pas dans le regiment." << std::endl;
 	return 0;
 }
 
@@ -93,5 +117,11 @@ Squad::Squad() {
 }
 
 Squad::~Squad() {
+	lst *tmp = _squad;
+	while (_squad) {
+		delete _squad->solider;
+		_squad = _squad->next;
+	}
+	_squad = tmp;
 	delete _squad;
 }

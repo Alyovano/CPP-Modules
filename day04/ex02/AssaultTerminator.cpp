@@ -1,12 +1,10 @@
 #include "AssaultTerminator.hpp"
 
 ISpaceMarine* AssaultTerminator::clone() const {
-	ISpaceMarine *ptr = new AssaultTerminator;
-	return ptr;
+	return (new AssaultTerminator(*this));
 }
 
 void AssaultTerminator::battleCry() const {
-	std::cout << "ASSAUT TERMINATOR" << std::endl;
 	std::cout << "This code is unclean. Purify it !" << std::endl;
 }
 void AssaultTerminator::rangedAttack() const {

@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 23:07:01 by aly               #+#    #+#             */
-/*   Updated: 2021/04/27 20:00:35 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/28 17:52:23 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Squad : public ISquad
 {
 
 private:
+	int		check_presence(ISpaceMarine * x);
 	lst 	*Last_solider();
 	lst		*lst_new_solider(ISpaceMarine * x);
 	int		lstsize();
