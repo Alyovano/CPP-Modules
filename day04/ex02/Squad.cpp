@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 00:00:31 by aly               #+#    #+#             */
-/*   Updated: 2021/04/28 18:00:18 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/28 18:04:26 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ int		Squad::check_presence(ISpaceMarine * x) {
 
 	tmp = _squad;
 	while (tmp) {
-		if (x == tmp->solider)
+		if (x == tmp->solider) {
 		 	return -1;
+		}
 		tmp = tmp->next;
 	}
 	return 0;
