@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 00:27:55 by aly               #+#    #+#             */
-/*   Updated: 2021/04/27 20:13:45 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/28 16:55:56 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,17 @@ int		main() {
 	std::cout << "----Squad----" << std::endl;
 	
 	ISquad *vlc = new Squad;
+
+	// ZONE DE DOUTE
 	vlc->push(bob);
 	vlc->push(jim);
-	std::cout << vlc->getCount() << std::endl;
-	ISpaceMarine* cur = vlc->getUnit(0);
-	cur->battleCry();
-	cur->rangedAttack();
-	cur->meleeAttack();
+	vlc->push(jim);
+	vlc->push(jim);
+	//std::cout << "Nombre de marines : " << vlc->getCount() << std::endl;
+	//ISpaceMarine* cur = vlc->getUnit(0);
+	// cur->battleCry();
+	// cur->rangedAttack();
+	// cur->meleeAttack();
 	//vlc->getUnit(1);
 
 }

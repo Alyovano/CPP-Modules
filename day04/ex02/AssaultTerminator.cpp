@@ -6,6 +6,7 @@ ISpaceMarine* AssaultTerminator::clone() const {
 }
 
 void AssaultTerminator::battleCry() const {
+	std::cout << "ASSAUT TERMINATOR" << std::endl;
 	std::cout << "This code is unclean. Purify it !" << std::endl;
 }
 void AssaultTerminator::rangedAttack() const {

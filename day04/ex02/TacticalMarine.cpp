@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 00:29:21 by aly               #+#    #+#             */
-/*   Updated: 2021/04/27 17:16:39 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/28 16:53:57 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ ISpaceMarine* TacticalMarine::clone() const {
 }
 
 void TacticalMarine::battleCry() const {
+	std::cout << "TACTICAL MARINE" << std::endl;
 	std::cout << "For the Holy PLOT !" << std::endl;
 }
 void TacticalMarine::rangedAttack() const {
