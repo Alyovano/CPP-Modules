@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Squad.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 00:00:31 by aly               #+#    #+#             */
-/*   Updated: 2021/04/28 18:04:26 by aly              ###   ########.fr       */
+/*   Updated: 2021/04/29 13:33:56 by alyovano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ int		Squad::check_presence(ISpaceMarine * x) {
 	lst *tmp;
 
 	tmp = _squad;
+	int i = 0;
 	while (tmp) {
+		std::cout << i++ << std::endl;
+		// std::cout << "X = " << x << std::endl;
+		// std::cout << "tmo=>solider  = " << tmp->solider << std::endl;
 		if (x == tmp->solider) {
 		 	return -1;
 		}
@@ -99,7 +103,6 @@ ISpaceMarine* 	Squad::getUnit(int i) const {
 }
 
 Squad::Squad(const Squad & x) {
-	// y faut tout copier marine par marine
 	*this = x;
 }
 
