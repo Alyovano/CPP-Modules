@@ -18,7 +18,7 @@ If you are a student at 42, I advise you to watch the educational videos (pedago
 
 #### Les operateurs :  <br/>https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c/1897891-surchargez-un-operateur (fr) <br/>
 
-#### Les heritages : <br/>https://loic-joly.developpez.com/articles/heritage-multiple/ (fr) <br/>
+#### Les heritages : <br/>https://loic-joly.developpez.com/articles/heritage-multiple/ (fr) <br/> https://www.geeksforgeeks.org/virtual-function-cpp/ <br/>
 
 #### Le polymorphisme : <br/>https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c/1898632-mettez-en-oeuvre-le-polymorphisme (fr) <br/>
 
