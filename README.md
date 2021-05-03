@@ -22,5 +22,7 @@ If you are a student at 42, I advise you to watch the educational videos (pedago
 
 #### Le polymorphisme : <br/>https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c/1898632-mettez-en-oeuvre-le-polymorphisme (fr) <br/>
 
+#### Try-Catch : <br/> https://en.cppreference.com/w/cpp/language/try_catch <br/>
+
 For all of your cpp projects I advise you to compile with : <br/>
 <code>$ clang++ -Wall -Wextra -Werror -std=c++98 #your_files.cpp </code> <br/>
