@@ -18,11 +18,11 @@ If you are a student at 42, I advise you to watch the educational videos (pedago
 
 #### Les operateurs :  <br/>https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c/1897891-surchargez-un-operateur (fr) <br/>
 
-#### Les heritages : <br/>https://loic-joly.developpez.com/articles/heritage-multiple/ (fr) <br/> https://www.geeksforgeeks.org/virtual-function-cpp/ <br/>
+#### Les heritages : <br/>https://loic-joly.developpez.com/articles/heritage-multiple/ (fr) <br/> https://www.geeksforgeeks.org/virtual-function-cpp/ (en) <br/>
 
 #### Le polymorphisme : <br/>https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c/1898632-mettez-en-oeuvre-le-polymorphisme (fr) <br/>
 
-#### Try-Catch : <br/> https://en.cppreference.com/w/cpp/language/try_catch <br/>
+#### Try-Catch : <br/> https://en.cppreference.com/w/cpp/language/try_catch (eng) <br/>
 
 For all of your cpp projects I advise you to compile with : <br/>
 <code>$ clang++ -Wall -Wextra -Werror -std=c++98 #your_files.cpp </code> <br/>
