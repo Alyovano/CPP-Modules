@@ -1,21 +1,36 @@
 #include "Cure.hpp"
+#include <iostream>
 
-Cure::Cure() : AMateria("ice") {
+Cure::Cure() : AMateria("cure")
+{
+	
 }
 
-Cure::~Cure() {
+Cure::Cure(const Cure &cure) : AMateria(cure)
+{
+
 }
 
-Cure::Cure(const Cure & x) {
-	*this = x;
+Cure& Cure::operator=(const Cure &cure)
+{
+	AMateria::operator=(cure);
+	return (*this);
 }
 
-Cure&		Cure::operator=(const Cure & x) {
-	// if (this != &x) {
-	// 	this->a = x.a;
-	// 	this->b = x.b;
-	// 	     ...
-	// }
-	(void)x; // -Werror -Wextra -Wall
-    return *this;
+Cure::~Cure()
+{
+
+}
+
+AMateria *Cure::clone() const
+{
+	Cure *cure = new Cure(*this);
+
+	return (cure);
+}
+
+void Cure::use(ICharacter &target)
+{
+	AMateria::use(target);
+	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }

@@ -1,23 +1,18 @@
 #ifndef ICE_HPP
 #define ICE_HPP
 
-#include <string>
-#include <iostream>
-#include <unistd.h>
-
-#include "AMateria.hpp"
+# include "AMateria.hpp"
 
 class Ice : public AMateria
 {
-
-private:
-
 public:
-
-	Ice(const Ice & x);
-	Ice&	operator=(const Ice & x);
 	Ice();
+	Ice(const Ice &ice);
+	Ice& operator=(const Ice &ice);
 	~Ice();
+
+	AMateria *clone() const;
+	void use(ICharacter& target);
 };
 
 #endif

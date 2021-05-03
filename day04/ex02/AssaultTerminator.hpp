@@ -11,9 +11,11 @@ class AssaultTerminator : public ISpaceMarine
 {
 
 private:
+	std::string _type;
 
 public:
 
+	std::string	getType() const;
 	virtual ISpaceMarine* clone() const;
 	virtual void battleCry() const;
 	virtual void rangedAttack() const;

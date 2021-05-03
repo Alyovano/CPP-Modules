@@ -6,35 +6,53 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:09:31 by aly               #+#    #+#             */
-/*   Updated: 2021/05/03 14:09:33 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/03 14:24:52 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-unsigned int		AMateria::getXP() const {
-	return _xp;
+#include "AMateria.hpp"
+#include <iostream>
+
+AMateria::AMateria(std::string const &type)
+{
+	this->_type = type;
+	this->_xp = 0;
 }
 
-std::string const & AMateria::getType() const {
-	return _type;
+AMateria::AMateria(const AMateria& materia)
+{
+	*this = materia;
 }
 
-AMateria::AMateria(std::string const & type) {
-	_type = type;
+AMateria::~AMateria()
+{
+
 }
 
-AMateria::~AMateria() {
-}
-
-// AMateria::AMateria(const AMateria & x) {
-// 	*this = x;
-// }
-
-AMateria&		AMateria::operator=(const AMateria & x) {
-	if (this != &x) {
-		this->_xp = x.getXP();
-		this->_type = x.getType();
+AMateria &AMateria::operator=(const AMateria& materia)
+{
+	if (this != &materia)
+	{
+		this->_type = materia.getType();
+		this->_xp = materia.getXP();
 	}
-    return *this;
+	return (*this);
+}
+
+std::string const &AMateria::getType() const
+{
+	return (_type);
+}
+
+unsigned int AMateria::getXP() const
+{
+	return (_xp);
+}
+
+void AMateria::use(ICharacter &target)
+{
+	(void)target;
+	_xp += 10;
 }

@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 23:07:01 by aly               #+#    #+#             */
-/*   Updated: 2021/04/28 17:52:23 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/03 14:53:20 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <unistd.h>
+#include <string.h>
 
 #include "ISquad.hpp"
 
@@ -37,6 +38,8 @@ private:
 	int		lstsize();
 	int		_count;
 	lst		*_squad;
+	int		_AT;
+	int		_TM;
 public:
 
 	virtual int 				push(ISpaceMarine * x);

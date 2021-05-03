@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Squad.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 00:00:31 by aly               #+#    #+#             */
-/*   Updated: 2021/04/29 13:33:56 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/05/03 14:58:25 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,7 @@ int		Squad::check_presence(ISpaceMarine * x) {
 	lst *tmp;
 
 	tmp = _squad;
-	int i = 0;
 	while (tmp) {
-		std::cout << i++ << std::endl;
-		// std::cout << "X = " << x << std::endl;
-		// std::cout << "tmo=>solider  = " << tmp->solider << std::endl;
 		if (x == tmp->solider) {
 		 	return -1;
 		}
@@ -67,9 +63,25 @@ int Squad::push(ISpaceMarine * x) {
 		return -1;
 	}
 	if (check_presence(x) == -1) {
-		std::cout << "Soldat deja existant dans le bataaaaaaaaaillon"
+		std::cout << "Soldat deja existant dans le bataillon"
 				<< std::endl;
 		return -1;
+	}
+	if (x->getType().compare("AssaultTerminator")) {
+		_AT += 1;
+		if (_AT > 1) {
+			std::cout << "Solider : " << x->getType() << " already present"
+					<< std::endl;
+			return (-1);
+		}
+	}
+	else if (x->getType().compare("TacticalMarine")) {
+		_TM += 1;
+		if (_TM > 1) {
+			std::cout << "Solider : " << x->getType() << " already present"
+					<< std::endl;
+			return (-1);
+		}
 	}
 	tmp = _squad;
 	if (_count != 0)
@@ -114,6 +126,8 @@ Squad&		Squad::operator=(const Squad & x) {
 }
 
 Squad::Squad() {
+	_AT = 0;
+	_TM = 0;
 	_squad = new lst;
 	_squad->next = 0;
 	_squad->solider = 0;

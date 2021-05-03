@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:09:35 by aly               #+#    #+#             */
-/*   Updated: 2021/05/03 14:09:36 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/03 14:24:30 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,26 @@
 #include <iostream>
 #include <unistd.h>
 
+# include "ICharacter.hpp"
+
 class AMateria
 {
-
-protected:
-	unsigned int _xp;
+private:
 	std::string _type;
-
-public:
-
-	//AMateria(const AMateria & x);
-	AMateria&	operator=(const AMateria & x);
-	AMateria(std::string const & type);
-	~AMateria();
+	unsigned int _xp;
 
 	AMateria();
-	std::string const & getType() const; //Returns the materia type
-	unsigned int getXP() const; //Returns the Materia's XP
+public:
+	AMateria(std::string const & type);
+	AMateria(const AMateria &materia);
+	AMateria &operator=(const AMateria &materia);
+	virtual ~AMateria();
+
+	std::string const & getType() const;
+	unsigned int getXP() const;
+
 	virtual AMateria* clone() const = 0;
-	//virtual void use(ICharacter & target);
+	virtual void use(ICharacter& target);
 };
 
 #endif

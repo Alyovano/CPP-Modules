@@ -1,5 +1,9 @@
 #include "AssaultTerminator.hpp"
 
+std::string	AssaultTerminator::getType() const {
+	return _type;
+}
+
 ISpaceMarine* AssaultTerminator::clone() const {
 	return (new AssaultTerminator(*this));
 }
@@ -16,6 +20,7 @@ void AssaultTerminator::meleeAttack() const {
 }
 
 AssaultTerminator::AssaultTerminator() {
+	_type = "AssaultTerminator";
 	std::cout << "* teleports from space *" << std::endl;
 }
 
@@ -28,11 +33,9 @@ AssaultTerminator::AssaultTerminator(const AssaultTerminator & x) {
 }
 
 AssaultTerminator&		AssaultTerminator::operator=(const AssaultTerminator & x) {
-	// if (this != &x) {
-	// 	this->a = x.a;
-	// 	this->b = x.b;
-	// 	     ...
-	// }
+	if (this != &x) {
+		this->_type = x.getType();
+	}
 	(void)x; // -Werror -Wextra -Wall
     return *this;
 }
