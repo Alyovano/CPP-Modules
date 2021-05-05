@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 23:07:01 by aly               #+#    #+#             */
-/*   Updated: 2021/05/04 15:53:36 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/05 11:42:06 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 struct lst
 {
-	std::string position;
+	unsigned int *ptr;
 	ISpaceMarine *solider;
 	lst *next;
 };
@@ -38,8 +38,6 @@ private:
 	int		lstsize();
 	int		_count;
 	lst		*_squad;
-	int		_AT;
-	int		_TM;
 public:
 
 	virtual int 				push(ISpaceMarine * x);

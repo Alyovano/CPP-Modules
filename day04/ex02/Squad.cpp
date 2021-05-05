@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 00:00:31 by aly               #+#    #+#             */
-/*   Updated: 2021/05/04 15:54:18 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/05 11:45:16 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		Squad::check_presence(ISpaceMarine * x) {
 
 	tmp = _squad;
 	while (tmp) {
-		if (x == tmp->solider) {
+		if ((unsigned int *)x == tmp->ptr) {
 		 	return -1;
 		}
 		tmp = tmp->next;
@@ -39,10 +39,8 @@ lst 	*Squad::Last_solider() {
 
 lst		*Squad::lst_new_solider(ISpaceMarine * x) {
 	lst *tmp = new lst;
-	std::cout << "test adress X : " << x << std::endl;
 	tmp->solider = x->clone();
-	std::cout << "test adress tmp : " << tmp->solider << std::endl;
-	std::cout << "DIFFF : " << x - tmp->solider << std::endl;
+	tmp->ptr = (unsigned int *)x;
 	tmp->next = 0;
 	return tmp;
 }
@@ -71,23 +69,9 @@ int Squad::push(ISpaceMarine * x) {
 				<< std::endl;
 		return -1;
 	}
-	// if () {
-	// 	_AT += 1;
-	// 	if (_AT > 1) {
-	// 		std::cout << "Solider : " << ... << " already present"
-	// 				<< std::endl;
-	// 		return (-1);
-	// 	}
-	// }
-	// else if () {
-	// 	_TM += 1;
-	// 	if (_TM > 1) {
-	// 		std::cout << "Solider : " << ... << " already present"
-	// 				<< std::endl;
-	// 		return (-1);
-	// 	}
-	// }
-
+	//test
+	// std::cout <<"x           = " << x << std::endl;
+	// std::cout <<"_squad->ptr = " << _squad->ptr << std::endl;
 	tmp = _squad;
 	if (_count != 0)
 		_squad = Last_solider();
@@ -131,8 +115,6 @@ Squad&		Squad::operator=(const Squad & x) {
 }
 
 Squad::Squad() {
-	_AT = 0;
-	_TM = 0;
 	_squad = new lst;
 	_squad->next = 0;
 	_squad->solider = 0;
