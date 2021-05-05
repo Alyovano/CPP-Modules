@@ -1,48 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*   Other_victime.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 15:09:54 by aly               #+#    #+#             */
-/*   Updated: 2021/05/05 14:05:52 by aly              ###   ########.fr       */
+/*   Created: 2021/05/05 18:29:49 by aly               #+#    #+#             */
+/*   Updated: 2021/05/05 18:37:46 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Other_victime.hpp"
 
-int				Bureaucrat::getGrade() const {
-	return _grade;
+Other_victime::Other_victime(std::string name) {
+	std::cout << "AAAAAAAAAAAAAAAAAAAAAAAAAAH" << std::endl;
+	this->_name = name;
 }
 
-std::string		Bureaucrat::getName() const {
-	return _name;
+Other_victime::Other_victime() {
+
 }
 
-Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name) {
-	_grade = grade;
-	if (_grade > 150) {
-		try
-		{
-			/* code */
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-	}
-	
+Other_victime::~Other_victime() {
+	std::cout << "Ok, i'm done." << std::endl;
 }
 
-Bureaucrat::~Bureaucrat() {
-}
-
-Bureaucrat::Bureaucrat(const Bureaucrat & x) {
+Other_victime::Other_victime(const Other_victime & x) {
 	*this = x;
 }
 
-Bureaucrat&		Bureaucrat::operator=(const Bureaucrat & x) {
+Other_victime&		Other_victime::operator=(const Other_victime & x) {
 	// if (this != &x) {
 	// 	this->a = x.a;
 	// 	this->b = x.b;
@@ -50,4 +37,10 @@ Bureaucrat&		Bureaucrat::operator=(const Bureaucrat & x) {
 	// }
 	(void)x; // -Werror -Wextra -Wall
     return *this;
+}
+
+void Other_victime::getPolymorphed() const
+{
+	std::cout << this->_name 
+		<< " was just polymorphed into a little monkey !" << std::endl;
 }

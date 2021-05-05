@@ -6,13 +6,14 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:02:07 by aly               #+#    #+#             */
-/*   Updated: 2021/04/24 01:29:25 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/05 18:36:59 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
 #include "Peon.hpp"
+#include "Other_victime.hpp"
 
 // int main()
 // {
@@ -44,6 +45,10 @@ int		main() {
 	
 	std::cout << "----VICTIM TEST----" << std::endl;
 	Victim pouet = Victim("Pouet");
+	std::cout << pouet;
+
+	std::cout << "----OTHER VICTIM----" << std::endl;
+	Other_victime pouet_two = Other_victime("Victime collaterale");
 	std::cout << pouet;
 
 	//Polymorph test
