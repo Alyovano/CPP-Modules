@@ -6,11 +6,12 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 00:00:31 by aly               #+#    #+#             */
-/*   Updated: 2021/05/03 14:58:25 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/04 15:54:18 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
+#include <typeinfo>
 // gestion de la liste chainee
 
 int		Squad::check_presence(ISpaceMarine * x) {
@@ -38,7 +39,10 @@ lst 	*Squad::Last_solider() {
 
 lst		*Squad::lst_new_solider(ISpaceMarine * x) {
 	lst *tmp = new lst;
+	std::cout << "test adress X : " << x << std::endl;
 	tmp->solider = x->clone();
+	std::cout << "test adress tmp : " << tmp->solider << std::endl;
+	std::cout << "DIFFF : " << x - tmp->solider << std::endl;
 	tmp->next = 0;
 	return tmp;
 }
@@ -54,10 +58,10 @@ int		Squad::lstsize() {
 }
 
 // mandatate functions
-
 int Squad::push(ISpaceMarine * x) {
 	lst *tmp;
 
+	//std::cout << "TYPEID ::::" << typeid(x).name() << std::endl;
 	if (!x) {
 		std::cout << "Soldat inexistant" << std::endl;
 		return -1;
@@ -67,22 +71,23 @@ int Squad::push(ISpaceMarine * x) {
 				<< std::endl;
 		return -1;
 	}
-	if (x->getType().compare("AssaultTerminator")) {
-		_AT += 1;
-		if (_AT > 1) {
-			std::cout << "Solider : " << x->getType() << " already present"
-					<< std::endl;
-			return (-1);
-		}
-	}
-	else if (x->getType().compare("TacticalMarine")) {
-		_TM += 1;
-		if (_TM > 1) {
-			std::cout << "Solider : " << x->getType() << " already present"
-					<< std::endl;
-			return (-1);
-		}
-	}
+	// if () {
+	// 	_AT += 1;
+	// 	if (_AT > 1) {
+	// 		std::cout << "Solider : " << ... << " already present"
+	// 				<< std::endl;
+	// 		return (-1);
+	// 	}
+	// }
+	// else if () {
+	// 	_TM += 1;
+	// 	if (_TM > 1) {
+	// 		std::cout << "Solider : " << ... << " already present"
+	// 				<< std::endl;
+	// 		return (-1);
+	// 	}
+	// }
+
 	tmp = _squad;
 	if (_count != 0)
 		_squad = Last_solider();

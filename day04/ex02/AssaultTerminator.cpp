@@ -1,8 +1,16 @@
-#include "AssaultTerminator.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AssaultTerminator.cpp                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/04 14:33:26 by aly               #+#    #+#             */
+/*   Updated: 2021/05/04 14:33:28 by aly              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-std::string	AssaultTerminator::getType() const {
-	return _type;
-}
+#include "AssaultTerminator.hpp"
 
 ISpaceMarine* AssaultTerminator::clone() const {
 	return (new AssaultTerminator(*this));
@@ -20,7 +28,6 @@ void AssaultTerminator::meleeAttack() const {
 }
 
 AssaultTerminator::AssaultTerminator() {
-	_type = "AssaultTerminator";
 	std::cout << "* teleports from space *" << std::endl;
 }
 
@@ -33,9 +40,6 @@ AssaultTerminator::AssaultTerminator(const AssaultTerminator & x) {
 }
 
 AssaultTerminator&		AssaultTerminator::operator=(const AssaultTerminator & x) {
-	if (this != &x) {
-		this->_type = x.getType();
-	}
 	(void)x; // -Werror -Wextra -Wall
     return *this;
 }

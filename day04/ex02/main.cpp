@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 00:27:55 by aly               #+#    #+#             */
-/*   Updated: 2021/05/03 14:58:38 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/04 15:43:47 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,10 @@ int		main() {
 		vlc->push(bob);
 		vlc->push(jim);
 		vlc->push(jim);
-		vlc->push(bob);
 		vlc->push(jim);
-		vlc->push(bob);
 		vlc->push(jim);
-		vlc->push(bob);
+		vlc->push(jim);
+		vlc->push(jim);
 		for (int i = 0; i < vlc->getCount(); ++i)
 		{
 			ISpaceMarine* cur = vlc->getUnit(i);

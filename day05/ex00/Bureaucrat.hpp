@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/27 00:29:25 by aly               #+#    #+#             */
-/*   Updated: 2021/05/04 14:37:55 by aly              ###   ########.fr       */
+/*   Created: 2021/05/03 15:09:52 by aly               #+#    #+#             */
+/*   Updated: 2021/05/03 17:24:40 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TACTICALMARINE_HPP
-#define TACTICALMARINE_HPP
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 #include <string>
 #include <iostream>
 #include <unistd.h>
 
-#include "IspaceMarine.hpp"
-
-class TacticalMarine : public ISpaceMarine
+class Bureaucrat
 {
 
 private:
+	int					_grade;
+	std::string const 	_name;
 
 public:
-	virtual ISpaceMarine* clone() const;
-	virtual void battleCry() const;
-	virtual void rangedAttack() const;
-	virtual void meleeAttack() const;
-	
-	TacticalMarine(const TacticalMarine & x);
-	TacticalMarine&	operator=(const TacticalMarine & x);
-	TacticalMarine();
-	virtual ~TacticalMarine();
+	int				getGrade() const;
+	std::string		getName() const;
+	Bureaucrat(const Bureaucrat & x);
+	Bureaucrat&	operator=(const Bureaucrat & x);
+	Bureaucrat(std::string const name, int grade);
+	~Bureaucrat();
 };
 
 #endif

@@ -6,15 +6,11 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 00:29:21 by aly               #+#    #+#             */
-/*   Updated: 2021/05/03 14:50:33 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/04 14:50:20 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "TacticalMarine.hpp"
-
-std::string		TacticalMarine::getType() const {
-	return _type;
-}
 
 ISpaceMarine* TacticalMarine::clone() const {
 	return (new TacticalMarine(*this));
@@ -32,7 +28,6 @@ void TacticalMarine::meleeAttack() const {
 }
 
 TacticalMarine::TacticalMarine() {
-	_type = "TacticalMarine";
 	std::cout << "Tactical Marine ready for action !" << std::endl;
 }
 
@@ -45,6 +40,6 @@ TacticalMarine::TacticalMarine(const TacticalMarine & x) {
 }
 
 TacticalMarine&		TacticalMarine::operator=(const TacticalMarine & x) {
-	(void)x; // -Werror -Wextra -Wall
+	(void)x;
     return *this;
 }

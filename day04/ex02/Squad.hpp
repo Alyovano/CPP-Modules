@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 23:07:01 by aly               #+#    #+#             */
-/*   Updated: 2021/05/03 14:53:20 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/04 15:53:36 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 struct lst
 {
-	int position;
+	std::string position;
 	ISpaceMarine *solider;
 	lst *next;
 };
