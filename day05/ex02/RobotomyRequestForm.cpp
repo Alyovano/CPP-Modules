@@ -6,7 +6,10 @@ void 	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	(void)executor;
 	srand (time(NULL));
 	int v1 = rand() % 100;
-
+	if (this->getSign() == false) {
+		std::cout << "Le contract n'est pas encore signe" << std::endl;
+		return ;
+	}
 	if (v1 > 70) {
 			std::cout << getTarget() 
 					<< " a bien été robotomizée" << std::endl;

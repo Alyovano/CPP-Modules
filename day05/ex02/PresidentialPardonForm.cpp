@@ -2,7 +2,12 @@
 
 void 	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 	(void)executor;
-	std::cout << getTarget() << " a été pardonnée par Zafod Beeblebrox." << std::endl;
+	if (this->getSign() == true) {
+		std::cout << getTarget() << " a été pardonnée par Zafod Beeblebrox." << std::endl;
+	}
+	else {
+		std::cout << "Le contract n'est pas encore signe" << std::endl;
+	}
 
 }
 

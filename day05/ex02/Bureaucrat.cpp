@@ -6,7 +6,7 @@
 /*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:09:54 by aly               #+#    #+#             */
-/*   Updated: 2021/05/12 19:21:24 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/05/12 22:48:54 by alyovano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 void	Bureaucrat::executeForm (Form const & form) {
 	if (form.getGradetoexec() >= this->getGrade()) {
-		std::cout << "Ca marche" << std::endl;
+		std::cout << this->getName() << " : Execute le contract : "
+			<< form.getName() << std::endl;
+		form.execute(*this);
 	}
+	else {
+		throw (Bureaucrat::GradeTooLowExecute());
+	}
+	
 	
 }
 
@@ -91,6 +97,11 @@ const char*			Bureaucrat::GradeTooHighException::what() const throw()
 const char*			Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade too low ! -> It must be between 1 & 150");
+}
+
+const char*			Bureaucrat::GradeTooLowExecute::what() const throw()
+{
+	return ("Grade too low to execute the contract !");
 }
 
 std::ostream& operator<<(std::ostream& out, Bureaucrat const & x) {

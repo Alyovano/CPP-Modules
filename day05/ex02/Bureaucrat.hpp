@@ -6,7 +6,7 @@
 /*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:09:52 by aly               #+#    #+#             */
-/*   Updated: 2021/05/12 19:48:42 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/05/12 22:45:45 by alyovano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,13 @@ public:
 	public:
 		virtual const char* what() const throw();
 	};
+	
+	struct GradeTooLowExecute : public std::exception
+	{
+	public:
+		virtual const char* what() const throw();
+	};
+	
 	void	executeForm (Form const & form);
 	
 };

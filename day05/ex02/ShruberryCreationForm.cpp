@@ -6,7 +6,7 @@
 /*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 18:29:40 by alyovano          #+#    #+#             */
-/*   Updated: 2021/05/12 19:23:36 by alyovano         ###   ########.fr       */
+/*   Updated: 2021/05/12 22:54:00 by alyovano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 void 	ShruberryCreationForm::execute(Bureaucrat const & executor) const {
 	(void)executor;
+	if (this->getSign() == false) {
+		std::cout << "Le contract n'est pas encore signe" << std::endl;
+		return ;
+	}
 	std::string filenaMe = this->getTarget();
 	filenaMe += "_shrubbery";
 	std::ofstream fd(filenaMe.c_str());
