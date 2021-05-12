@@ -1,0 +1,13 @@
+{
+	"files.associations": {
+		"optional": "cpp",
+		"exception": "cpp",
+		"limits": "cpp",
+		"new": "cpp",
+		"stdexcept": "cpp",
+		"functional": "cpp",
+		"typeinfo": "cpp",
+		"iostream": "cpp",
+		"iosfwd": "cpp"
+	}
+}

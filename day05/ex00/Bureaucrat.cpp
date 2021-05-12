@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:09:54 by aly               #+#    #+#             */
-/*   Updated: 2021/05/05 14:05:52 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/12 14:09:18 by alyovano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,30 @@ std::string		Bureaucrat::getName() const {
 	return _name;
 }
 
+void		Bureaucrat::incGrade() {
+	_grade -= 1;
+	if (_grade < 1) {
+		_grade = 1;
+		throw (Bureaucrat::GradeTooHighException());
+	}
+
+}
+void		Bureaucrat::decGrade() {
+	_grade += 1;
+	if (_grade > 150) {
+		_grade = 150;
+		throw (Bureaucrat::GradeTooLowException());
+	}
+}
+
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name) {
 	_grade = grade;
 	if (_grade > 150) {
-		try
-		{
-			/* code */
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
+		throw (Bureaucrat::GradeTooLowException());
 	}
-	
+	if (_grade < 1) {
+		throw (Bureaucrat::GradeTooHighException());
+	}
 }
 
 Bureaucrat::~Bureaucrat() {
@@ -50,4 +61,20 @@ Bureaucrat&		Bureaucrat::operator=(const Bureaucrat & x) {
 	// }
 	(void)x; // -Werror -Wextra -Wall
     return *this;
+}
+
+const char*			Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high ! -> It must be between 1 & 150");
+}
+
+const char*			Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low ! -> It must be between 1 & 150");
+}
+
+std::ostream& operator<<(std::ostream& out, Bureaucrat const & x) {
+	out << x.getName() << " bureaucrate grade : " << 
+			x.getGrade() << std::endl;
+	return out;
 }

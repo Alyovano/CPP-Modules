@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:09:52 by aly               #+#    #+#             */
-/*   Updated: 2021/05/03 17:24:40 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/12 14:02:35 by alyovano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,21 @@ public:
 	Bureaucrat&	operator=(const Bureaucrat & x);
 	Bureaucrat(std::string const name, int grade);
 	~Bureaucrat();
+	void		incGrade();
+	void		decGrade();
+	struct GradeTooHighException : public std::exception
+	{
+	public:
+		virtual const char* what() const throw();
+	};
+	struct GradeTooLowException : public std::exception
+	{
+	public:
+		virtual const char* what() const throw();
+	};
+	
 };
+
+std::ostream& operator<<(std::ostream& out, Bureaucrat const & x);
 
 #endif
