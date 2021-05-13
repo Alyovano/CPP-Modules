@@ -6,7 +6,7 @@
 #    By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/13 17:03:33 by alyovano          #+#    #+#              #
-#    Updated: 2021/05/13 17:03:44 by alyovano         ###   ########.fr        #
+#    Updated: 2021/05/13 20:06:37 by alyovano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = Annuaire
+NAME = Convert
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 CLANG = clang++ $(FLAGS)
