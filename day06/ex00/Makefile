@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+         #
+#    By: aly <aly@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/13 17:03:33 by alyovano          #+#    #+#              #
-#    Updated: 2021/05/13 20:06:37 by alyovano         ###   ########.fr        #
+#    Updated: 2021/05/14 15:37:43 by aly              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS = main.cpp
+SRCS = main.cpp convert.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
