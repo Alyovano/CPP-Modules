@@ -6,15 +6,27 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 15:42:05 by aly               #+#    #+#             */
-/*   Updated: 2021/05/15 10:35:37 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/15 10:52:38 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "convert.hpp"
 
+//Geteurs
+int			convert::getType() const {
+	return _type_check;
+}
+
+int			convert::getSign() const {
+	return _is_negativ;
+}
+
+// Algo de parsing interne
 int		convert::last_Variable_Test(std::string str) {
-	if (_parse_point == 0 && _parse_F == 0)
+	if (_parse_point == 0 && _parse_F == 0) {
+		_type_check = INT;
 		return EXIT_SUCCESS;
+	}
 	if (_parse_point > 1 || _parse_F > 1)
 		return EXIT_FAILURE;
 	if (_parse_point == 1 && _parse_F == 0) {
@@ -71,11 +83,14 @@ int		convert::is_The_Variable_Type(std::string str) {
 		_type_check = DOUBLE;
 		return EXIT_SUCCESS;
 	}
+	if (str == "-." || str == "-.f" || str == "-f")
+		return EXIT_FAILURE;
+	if ((str[0] == '-') && (str[1] == '.' || str[1] == 'f'))
+		return EXIT_FAILURE;
 	else {
 		if (more_Variable_Test(str) == EXIT_FAILURE)
 			return EXIT_FAILURE;
 	}
-	_type_check = INT;
 	return EXIT_SUCCESS;
 }
 
@@ -90,7 +105,6 @@ convert&		convert::operator=(const convert & x) {
 }
 
 convert::convert() {
-	(void)_is_negativ;
 	_parse_F = 0;
 	_parse_point = 0;
 	_type_check = 0;

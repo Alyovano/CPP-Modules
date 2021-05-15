@@ -27,6 +27,8 @@ private:
 
 public:
 
+	int			getType() const;
+	int			getSign() const;
 	convert(const convert & x);
 	convert&	operator=(const convert & x);
 	convert();

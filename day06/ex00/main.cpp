@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 15:11:33 by aly               #+#    #+#             */
-/*   Updated: 2021/05/14 15:46:36 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/15 10:46:02 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,18 @@ int		main(int argc, char **argv) {
 		std::cout << "Argument-Error : Bad Format" << std::endl;
 		return EXIT_FAILURE;
 	}
-	std::cout << "Good" << std::endl;
-	//convert_To_Others_Type(arg);
+	nb.getSign() == NEGATIVE ? std::cout 
+			<< "Negative number : " : std::cout << "Positive number : ";
+	if (nb.getType() == INT)
+		std::cout << "INT";
+	else if (nb.getType() == CHAR)
+		std::cout << "CHAR";
+	else if (nb.getType() == FLOAT)
+		std::cout << "FLOAT";
+	else if (nb.getType() == DOUBLE)
+		std::cout << "DOUBLE";
+	else if (nb.getType() == 0)
+		std::cout << "Pas de type trouve";
+	std::cout << std::endl;
 	return EXIT_SUCCESS;
 }
