@@ -1,8 +1,13 @@
 #ifndef CONVERT_HPP
 #define CONVERT_HPP
 
-#include <string>
+#include <cstdlib>
 #include <iostream>
+#include <string>
+#include <vector>
+#include <sstream>
+#include <limits>
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 

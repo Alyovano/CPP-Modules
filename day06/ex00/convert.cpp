@@ -6,12 +6,12 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 15:42:05 by aly               #+#    #+#             */
-/*   Updated: 2021/05/15 12:38:09 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/15 12:49:49 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "convert.hpp"
-
+#include <string>
 //Geteurs
 int			convert::getType() const {
 	return _type_check;
@@ -136,7 +136,7 @@ void	convert::is_Castable(std::string str) {
 	if (_type_check == INT) {
 		int nb = 0;
 		try {
-			nb = stoi(str);
+			nb = std::stoi(str);
 		}
 		catch(const std::exception& e)
 		{
@@ -158,7 +158,7 @@ void	convert::is_Castable(std::string str) {
 	else if (_type_check == FLOAT) {
 		float nb = 0;
 		try {
-			nb = stof(str);
+			nb = std::stof(str);
 		}
 		catch(const std::exception& e)
 		{
@@ -173,7 +173,7 @@ void	convert::is_Castable(std::string str) {
 	else if (_type_check == DOUBLE) {
 		double nb = 0;
 		try {
-			nb = stod(str);
+			nb = std::stod(str);
 		}
 		catch(const std::exception& e)
 		{
