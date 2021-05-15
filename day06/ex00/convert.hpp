@@ -34,6 +34,7 @@ public:
 	convert();
 	~convert();
 	int		is_The_Variable_Type(std::string str);
+	void	is_Castable(std::string str);
 };
 
 #endif

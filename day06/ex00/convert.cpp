@@ -6,7 +6,7 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 15:42:05 by aly               #+#    #+#             */
-/*   Updated: 2021/05/15 10:52:38 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/15 11:16:26 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,17 @@ int			convert::getType() const {
 
 int			convert::getSign() const {
 	return _is_negativ;
+}
+// Casting
+
+void	convert::is_Castable(std::string str) {
+	if (_type_check == INT) {
+		int nb = std::stoi(str);
+		float f_nb = static_cast<float>(nb) / 2;
+		std::cout << "Ma str : " << str << std::endl;
+		std::cout << "Mon int : " << nb << std::endl;
+		std::cout << "Mon float : " << f_nb << std::endl;
+	}
 }
 
 // Algo de parsing interne
@@ -77,10 +88,14 @@ int		convert::more_Variable_Test(std::string str) {
 int		convert::is_The_Variable_Type(std::string str) {
 	if (str == "-inff" || str == "inff" || str == "nanf") {
 		_type_check = FLOAT;
+		if (str[0] == '-')
+			_is_negativ = NEGATIVE;
 		return EXIT_SUCCESS;
 	}
 	else if (str == "-inf" || str == "inf" || str == "nan") {
 		_type_check = DOUBLE;
+		if (str[0] == '-')
+			_is_negativ = NEGATIVE;
 		return EXIT_SUCCESS;
 	}
 	if (str == "-." || str == "-.f" || str == "-f")
