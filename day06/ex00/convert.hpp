@@ -4,11 +4,14 @@
 #include <string>
 #include <iostream>
 #include <unistd.h>
+#include <stdlib.h>
 
 #define CHAR	1
 #define INT		2
 #define FLOAT	3
 #define DOUBLE	4
+
+#define NEGATIVE 5
 
 class convert
 {
@@ -20,6 +23,7 @@ private:
 	int		_is_negativ;
 
 	int		more_Variable_Test(std::string str);
+	int		last_Variable_Test(std::string str);
 
 public:
 

@@ -6,34 +6,58 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 15:42:05 by aly               #+#    #+#             */
-/*   Updated: 2021/05/14 16:24:47 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/15 10:35:37 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "convert.hpp"
 
+int		convert::last_Variable_Test(std::string str) {
+	if (_parse_point == 0 && _parse_F == 0)
+		return EXIT_SUCCESS;
+	if (_parse_point > 1 || _parse_F > 1)
+		return EXIT_FAILURE;
+	if (_parse_point == 1 && _parse_F == 0) {
+		_type_check = DOUBLE;
+		return EXIT_SUCCESS;
+	}
+	if (_parse_F == 1) {
+		int j = 0;
+		while (str[j])
+			j++;
+		if (str[j - 1] == 'f') {
+			_type_check = FLOAT;
+			return EXIT_SUCCESS;
+		}
+	}
+	return EXIT_FAILURE;
+}
+
 int		convert::more_Variable_Test(std::string str) {
 	for (size_t i = 0; i < str.length() && str[i] ; i++) {
 		if (!isdigit(str[i])) {
 			if (i == 0 && str.length() == 1) {
-				std::cerr << "Un char" << std::endl;
 				_type_check = CHAR;
 				return EXIT_SUCCESS;
 			}
-			else if (str[i] != '.' || str[i] != 'f') {
-				std::cerr << "Debug 2 " << std::endl;
-				return EXIT_FAILURE;
+			else if (i == 0 && str.length() > 1) {
+				if (str[i] == '-') {
+					_is_negativ = NEGATIVE;
+				}
+				else if (str[i] != '-')
+					return EXIT_FAILURE;
 			}
-			else {
-				std::cerr << "Debug 3 " << std::endl;
+			else if ((i > 0) && (str[i] == '.' || str[i] == 'f')) {
 				if (str[i] == '.')
 					_parse_point += 1;
 				else if (str[i] == 'f')
 					_parse_F += 1;
 			}
-		}	
+			else
+				return EXIT_FAILURE;
+		}
 	}
-	if (_parse_point > 1 || _parse_F > 1)
+	if (last_Variable_Test(str) == EXIT_FAILURE)
 		return EXIT_FAILURE;
 	return EXIT_SUCCESS;
 }
@@ -66,6 +90,7 @@ convert&		convert::operator=(const convert & x) {
 }
 
 convert::convert() {
+	(void)_is_negativ;
 	_parse_F = 0;
 	_parse_point = 0;
 	_type_check = 0;

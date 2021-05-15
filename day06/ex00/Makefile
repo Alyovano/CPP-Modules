@@ -6,7 +6,7 @@
 #    By: aly <aly@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/13 17:03:33 by alyovano          #+#    #+#              #
-#    Updated: 2021/05/14 15:37:43 by aly              ###   ########.fr        #
+#    Updated: 2021/05/15 10:37:34 by aly              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS = main.cpp convert.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = Convert
+NAME = CastMyNumber
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 CLANG = clang++ $(FLAGS)
