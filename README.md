@@ -24,5 +24,7 @@ If you are a student at 42, I advise you to watch the educational videos (pedago
 
 #### Try-Catch : <br/> https://en.cppreference.com/w/cpp/language/try_catch (en) <br/> https://www.w3schools.com/cpp/cpp_exceptions.asp (en) <br/>
 
+#### Random : <br/> https://www.cplusplus.com/reference/cstdlib/rand/ (en) <br/>
+
 For all of your cpp projects I advise you to compile with : <br/>
 <code>$ clang++ -Wall -Wextra -Werror -std=c++98 #your_files.cpp </code> <br/>
