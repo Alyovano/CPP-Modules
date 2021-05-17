@@ -6,12 +6,12 @@
 #    By: aly <aly@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/13 17:03:33 by alyovano          #+#    #+#              #
-#    Updated: 2021/05/17 11:21:50 by aly              ###   ########.fr        #
+#    Updated: 2021/05/17 12:37:39 by aly              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS = main.cpp
+SRCS = main.cpp serialize.cpp random.cpp deserialize.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
