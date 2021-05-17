@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alyovano <alyovano@student.s19.be>         +#+  +:+       +#+         #
+#    By: aly <aly@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/13 17:03:33 by alyovano          #+#    #+#              #
-#    Updated: 2021/05/13 17:03:44 by alyovano         ###   ########.fr        #
+#    Updated: 2021/05/17 15:10:39 by aly              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = Annuaire
+NAME = WhichClass
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 CLANG = clang++ $(FLAGS)
