@@ -6,24 +6,11 @@
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 16:00:21 by aly               #+#    #+#             */
-/*   Updated: 2021/05/17 19:48:15 by aly              ###   ########.fr       */
+/*   Updated: 2021/05/18 10:29:41 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
-
-class Awesome
-  {
-    public:
-      Awesome( void ) : _n( 42 ) { return; }
-      int get( void ) const { return this->_n; }
-    private:
-      int _n;
-  };
-  std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
-  
-  template< typename T >
-  void print( T const & x ) { std::cout << x << std::endl; return; }
 
 int		main() {
 	float	tabfloat[5] = { 59.5f, 31.6f, 99.9f, 1.325f, 3333.6f };
