@@ -5,36 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aly <aly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 15:59:13 by aly               #+#    #+#             */
-/*   Updated: 2021/05/18 16:09:00 by aly              ###   ########.fr       */
+/*   Created: 2021/05/19 12:23:59 by aly               #+#    #+#             */
+/*   Updated: 2021/05/19 12:24:18 by aly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
+#include <stdlib.h>
+#include <algorithm>
+#include <vector>
+#include <iostream>
 #include <stdexcept>
+#include <list>
 #include <string>
 #include <iostream>
 #include <unistd.h>
-#include <stdlib.h>
 
 class span
 {
 
 private:
-	unsigned int	_max_range;
-	unsigned int 	_index;
-	int				*_tab;
 
 public:
 
-	int		getValue(unsigned int index);
-	void	addNumber(int nb);
-
 	span(const span & x);
 	span&	operator=(const span & x);
-	span(unsigned int nb);
+	span();
 	~span();
 };
 
