@@ -26,5 +26,7 @@ If you are a student at 42, I advise you to watch the educational videos (pedago
 
 #### Random : <br/> https://www.cplusplus.com/reference/cstdlib/rand/ (en) <br/>
 
+#### Containers : <br/> https://en.cppreference.com/w/cpp/container (en) <br/>
+
 For all of your cpp projects I advise you to compile with : <br/>
 <code>$ clang++ -Wall -Wextra -Werror -std=c++98 #your_files.cpp </code> <br/>
